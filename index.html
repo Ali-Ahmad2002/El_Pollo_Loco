@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>El Pollo Loco</title>
+    <script src="./models/drawAble-object.js"></script>
+    <script src="./models/movable-object.class.js"></script>
+    <script src="./models/character.class.js"></script>
+    <script src="./models/chicken.class.js"></script>
+    <script src="./models/cloud.class.js"></script>
+    <script src="./models/selectObjects.js"></script>
+    <script src="./models/throwableObject.js"></script>
+    <script src="./models/bottle.class.js"></script>
+    <script src="./models/background-objects.class.js"></script>
+    <script src="./models/statusBar.class.js"></script>
+    <script src="./models/statusBarCoins.class.js"></script>
+    <script src="./models/statusBarBottles.class.js"></script>
+    <script src="./models/world.class.js"></script>
+    <script src="./models/keyboard.class.js"></script>
+    <script src="./models/level.class.js"></script>
+    <script src="./models/endBoss.class.js"></script>
+    <script src="./levels/level1.js"></script>
+    <script src="./JavaScript/game.js"></script>
+</head>
+
+<body>
+
+    <div id="startScreen" class="startScreen">
+        <div class="start">
+            <button onclick="startGame()" class="startBtn">Start</button>
+        </div>
+    </div>
+
+    <div id="theGame" class="d-none">
+        <h1 class="h1">El Pollo Loco</h1>
+
+        <canvas id="canvas" width="720px" height="480px">
+
+        </canvas>
+
+        <button onclick="fullScreen()" class="fullScreenBtn">Fullscreen <img class="fullScreenImg"
+                src="./myImages/fullscreen-11-48.png"></button>
+
+        <img class="infoBtn" onclick="openInfo()" src="./myImages/info-2-48.png" alt="">
+
+        <div id="infoContainer" class="infoContainer d-none">
+            <div class="goBackContainer">
+                <img class="goBackCross" onclick="closeInfo()" src="./myImages/x-mark-48.png" alt="">
+            </div>
+
+
+            <div class="mainBtnS">
+                <div>
+                    <img src="./myImages/arrow-109-48.png">
+                    <img src="./myImages/arrow-48.png" alt="">
+                </div>
+
+                <div>
+                    <img src="./myImages/myspace-48.png" alt="">
+                </div>
+
+                <div>
+                    
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <!-- <div id="GameOverScreen">
+
+    </div> -->
+
+</body>
+
+</html>
