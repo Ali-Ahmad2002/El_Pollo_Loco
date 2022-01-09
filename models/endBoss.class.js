@@ -31,13 +31,16 @@ class endBoss extends MovableObject {
         super().loadImg(this.walkingImages[0]);
         this.loadImages(this.walkingImages);
         this.loadImages(this.hitImages);
+        this.loadImages(this.deadImages);
         this.x = 2400;
         this.animate();
     }
 
     animate() {
         setInterval(() => {
-            if (this.isHurt()) {
+            if (this.endBossDead()) {
+                this.playAnimation(this.deadImages);
+            } else if (this.isHurt()) {
                 this.playAnimation(this.hitImages);
             } else {
                 this.playAnimation(this.walkingImages);
