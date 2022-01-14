@@ -10,12 +10,16 @@ class MovableObject extends drawAbleObject {
     CoinEnergy = 0;
     bottleEnergy = 0;
     endBossEnergy = 100;
+    chickenEnergy = 1;
 
 
+    stopGravity() {
+        clearInterval(this.gravityInterval);
+    }
 
 
     applyGravity() {
-        setInterval(() => {
+        this.gravityInterval = setInterval(() => {
             if (this.isAboveGround() || this.speedY > 0) {
                 this.y -= this.speedY;
                 this.speedY -= this.acceleration;
@@ -65,7 +69,7 @@ class MovableObject extends drawAbleObject {
     }
 
     hitBottle() {
-        this.bottleEnergy += 20;
+        this.bottleEnergy += 10;
         if (this.bottleEnergy > 100) {
             this.bottleEnergy = 100;
         }
@@ -82,6 +86,15 @@ class MovableObject extends drawAbleObject {
         this.endBossEnergy -= 25;
         if (this.endBossEnergy < 0) {
             this.endBossEnergy = 0;
+        } else {
+            this.lastHit = new Date().getTime();
+        }
+    }
+
+    hitChickens() {
+        this.chickenEnergy -= 1;
+        if (this.chickenEnergy <= 0) {
+            this.chickenEnergy = 0;
         } else {
             this.lastHit = new Date().getTime();
         }

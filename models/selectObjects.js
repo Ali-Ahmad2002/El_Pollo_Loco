@@ -11,7 +11,4 @@ class selectObjects extends drawAbleObject {
         this.x = 375 + Math.random() * 1750;
         this.y = 80 - Math.random() * 70;
     }
-
-
-
 }

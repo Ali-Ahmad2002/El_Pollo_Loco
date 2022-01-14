@@ -22,9 +22,8 @@ class character extends MovableObject {
         'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-35.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-36.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-37.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-38.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-39.png',
-        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-40.png'
+        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-38.png',    
+        'img/2.Secuencias_Personaje-Pepe-corrección/3.Secuencia_salto/J-39.png'
     ];
 
 
@@ -61,7 +60,7 @@ class character extends MovableObject {
 
     animate() {
 
-        setInterval(() => {
+        this.moveInterval = setInterval(() => {
             this.walkingSound.pause();
             if (this.world.theKeyboard.right && this.x < this.world.level.levelEndX) {
                 this.moveRight();
@@ -83,7 +82,7 @@ class character extends MovableObject {
         }, 1000 / 60);
 
 
-        setInterval(() => {
+        this.playInterval = setInterval(() => {
 
             if (this.isDead()) {
                 this.playAnimation(this.deadImages);
@@ -99,5 +98,11 @@ class character extends MovableObject {
                 }
             }
         }, 100);
+    }
+
+    stopCharacterIntervals() {
+        clearInterval(this.moveInterval);
+        clearInterval(this.playInterval);
+        super.stopGravity();
     }
 }

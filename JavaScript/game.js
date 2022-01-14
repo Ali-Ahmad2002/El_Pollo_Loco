@@ -6,7 +6,19 @@ function startGame() {
     document.getElementById('startScreen').classList.add('d-none');
     document.getElementById('theGame').classList.remove('d-none');
     document.getElementById('theGame').classList.add('theGame');
+    getLevel();
     init();
+}
+
+function restartGame() {
+    document.getElementById('winImg').classList.add('d-none');
+    startGame();
+    // getLevel();
+}
+
+function tryAgain() {
+    document.getElementById('lostImg').classList.add('d-none');
+    startGame();
 }
 
 function openInfo() {
@@ -27,7 +39,6 @@ function fullScreen() {
 function init() {
     canvas = document.getElementById('canvas');
     theWorld = new world(canvas, theKeyboard);
-
     console.log('My Character is', theWorld);
 }
 

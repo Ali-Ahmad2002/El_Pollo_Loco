@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>El_Pollo_Loco</title>
     <script src="./models/drawAble-object.js"></script>
@@ -43,11 +46,20 @@
 
         <canvas id="canvas" width="720px" height="480px">
 
+
         </canvas>
+        <div id="lostGame" class="youLostImgContainer d-none">
+            <img id="lostImg" class="lostImg" src="img/9.Intro _ Outro Image/_Game over_ screen/1.you lost.png">
+            <button onclick="tryAgain()" class="restartBtn">Try Again</button>
+        </div>
+
+        <div id="winImg" class="youLostImgContainer d-none">
+            <img class="lostImg" src="img/9.Intro _ Outro Image/_Game over_ screen/3.Game over.png">
+            <button onclick="restartGame()" class="restartBtn">Play Again</button>
+        </div>
 
         <button onclick="fullScreen()" class="fullScreenBtn">Fullscreen <img class="fullScreenImg"
                 src="./myImages/fullscreen-11-48.png"></button>
-
         <img class="infoBtn" onclick="openInfo()" src="./myImages/info-2-48.png" alt="">
 
         <div id="infoContainer" class="infoContainer d-none">
@@ -55,22 +67,23 @@
                 <img class="goBackCross" onclick="closeInfo()" src="./myImages/x-mark-48.png" alt="">
             </div>
 
-
             <div class="mainBtnS">
-                <div>
-                    <img src="./myImages/arrow-109-48.png">
-                    <img src="./myImages/arrow-48.png" alt="">
-                </div>
-
-                <div>
-                    <img src="./myImages/myspace-48.png" alt="">
-                </div>
-
-                <div>
-
+                <div class="leftRightImg">
+                    <img src="./myImages/arrowLeft.png" alt="">
+                    <img style="padding-left: 10px; padding-right: 10px;" src="./myImages/arrowRight.png" alt="">
+                    <span>Go Left/Right</span>
                 </div>
             </div>
 
+            <div class="spaceImg">
+                <img src="./myImages/myspace-48.png" alt="">
+                <span>Jump</span>
+            </div>
+
+            <div class="spaceImg">
+                <span class="Dbtn">D</span>
+                <span>Throw</span>
+            </div>
 
 
         </div>
